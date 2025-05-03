@@ -49,7 +49,7 @@ class JobStore(metaclass=Singleton):
         Args:
             job (Job): The job to update.
         Raises:
-            ValueError: If the job is invalid or does not exist.
+            KeyError: If the job does not exist.
         """
         if not self.jobs_collection.find_one({"id": job.id}):
             raise KeyError(f"Job with ID '{job.id}' does not exist.")
