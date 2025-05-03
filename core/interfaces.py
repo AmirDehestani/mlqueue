@@ -6,7 +6,7 @@ from models.status import Status
 # --- Job Store Interface ---
 
 
-class JobStore(ABC):
+class JobStoreInterface(ABC):
     @abstractmethod
     def save_job(self, job: Job) -> None:
         """
@@ -57,7 +57,7 @@ class JobStore(ABC):
 # --- Task Registry Interface ---
 
 
-class TaskRegistry(ABC):
+class TaskRegistryInterface(ABC):
     @abstractmethod
     def register_task(self, name: str, func: Callable) -> None:
         """
@@ -107,7 +107,7 @@ class TaskRegistry(ABC):
 # --- Queue Interface ---
 
 
-class JobQueue(ABC):
+class JobQueueInterface(ABC):
     @abstractmethod
     def enqueue(self, job: Job) -> None:
         """
