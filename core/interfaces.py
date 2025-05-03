@@ -71,17 +71,6 @@ class TaskRegistryInterface(ABC):
         pass
 
     @abstractmethod
-    def unregister_task(self, name: str) -> None:
-        """
-        Unregister a task by name
-        Args:
-            name (str): The name of the task to unregister.
-        Raises:
-            KeyError: If the task does not exist.
-        """
-        pass
-
-    @abstractmethod
     def get_task(self, name: str) -> Callable:
         """
         Retrieve a task by name
